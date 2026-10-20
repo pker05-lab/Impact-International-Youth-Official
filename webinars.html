@@ -101,13 +101,41 @@
     </div>
   </div>
 </section>
-<section class="section cream">
-  <div class="upcoming">
-    <div class="eyebrow">DEVELOPING</div>
-    <h2>More conversations are coming.</h2>
-    <p>IIY Webinars is currently being developed as part of Impact International Youth's growing community. Upcoming sessions, speakers, and topics will be announced as the initiative expands.
-    </p>
-    <a class="button primary" href="events.html">View Events</a>
+<section class="section cream" id="sessions">
+  <div class="heading sessions-header">
+    <div>
+      <div class="eyebrow">WEBINAR SESSIONS</div>
+      <h2>Explore past & upcoming sessions.</h2>
+    </div>
+    <div class="session-nav-arrows">
+      <button class="arrow-btn" id="prevSession" aria-label="Previous Session">←</button>
+      <span id="sessionIndicator">01 / 02</span>
+      <button class="arrow-btn" id="nextSession" aria-label="Next Session">→</button>
+    </div>
+  </div>
+
+  <div class="sessions-slider">
+    <!-- Session 1: AI (Ended) -->
+    <div class="session-card active" data-index="0">
+      <div class="session-badge ended">Concluded</div>
+      <div class="session-meta">Session 01 • September 1–2, 2026</div>
+      <h3>Artificial Intelligence: Shaping Tomorrow's World</h3>
+      <p>Our inaugural session explored the rapid evolution of artificial intelligence, examining its profound impacts on education, workforce dynamics, and the ethical considerations shaping our future.</p>
+      <div class="session-actions">
+        <a class="button secondary" href="events.html">View Session Recap</a>
+      </div>
+    </div>
+
+    <!-- Session 2: The UN's Motion to Abolish the Death Penalty (Upcoming) -->
+    <div class="session-card" data-index="1">
+      <div class="session-badge upcoming">Upcoming Session</div>
+      <div class="session-meta">Session 02 • Coming Soon</div>
+      <h3>The UN's Motion to Abolish the Death Penalty</h3>
+      <p>An in-depth discussion analyzing international human rights frameworks, legal debates, and diverse global perspectives surrounding the abolition of capital punishment worldwide.</p>
+      <div class="session-actions">
+        <a class="button primary" href="join.html">Register for Session</a>
+      </div>
+    </div>
   </div>
 </section>
 </main>
