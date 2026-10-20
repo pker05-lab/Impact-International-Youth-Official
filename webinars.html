@@ -153,5 +153,29 @@
       </div>
       <div class="copyright">© 2026 Impact International Youth. All rights reserved.</div>
     </footer>
+    <script>
+  const cards = document.querySelectorAll('.session-card');
+  const indicator = document.getElementById('sessionIndicator');
+  const prevBtn = document.getElementById('prevSession');
+  const nextBtn = document.getElementById('nextSession');
+  let currentIndex = 0;
+
+  function updateSession(index) {
+    cards.forEach((card, i) => {
+      card.classList.toggle('active', i === index);
+    });
+    indicator.textContent = `0${index + 1} / 0${cards.length}`;
+  }
+
+  prevBtn.addEventListener('click', () => {
+    currentIndex = (currentIndex === 0) ? cards.length - 1 : currentIndex - 1;
+    updateSession(currentIndex);
+  });
+
+  nextBtn.addEventListener('click', () => {
+    currentIndex = (currentIndex === cards.length - 1) ? 0 : currentIndex + 1;
+    updateSession(currentIndex);
+  });
+</script>
   </body>
 </html>
