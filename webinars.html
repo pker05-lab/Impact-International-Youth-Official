@@ -109,14 +109,14 @@
     </div>
     <div class="session-nav-arrows">
       <button class="arrow-btn" id="prevSession" aria-label="Previous Session">←</button>
-      <span id="sessionIndicator">01 / 02</span>
+      <span id="sessionIndicator">02 / 02</span>
       <button class="arrow-btn" id="nextSession" aria-label="Next Session">→</button>
     </div>
   </div>
 
   <div class="sessions-slider">
     <!-- Session 1: AI (Ended) -->
-    <div class="session-card active" data-index="0">
+    <div class="session-card" data-index="0">
       <div class="session-badge ended">Concluded</div>
       <div class="session-meta">Session 01 • September 1–2, 2026</div>
       <h3>Artificial Intelligence: Shaping Tomorrow's World</h3>
@@ -127,7 +127,7 @@
     </div>
 
     <!-- Session 2: The UN's Motion to Abolish the Death Penalty (Upcoming) -->
-    <div class="session-card" data-index="1">
+    <div class="session-card active" data-index="1">
       <div class="session-badge upcoming">Upcoming Session</div>
       <div class="session-meta">Session 02 • Coming Soon</div>
       <h3>The UN's Motion to Abolish the Death Penalty</h3>
@@ -153,19 +153,27 @@
       </div>
       <div class="copyright">© 2026 Impact International Youth. All rights reserved.</div>
     </footer>
-    <script>
+   <script>
   const cards = document.querySelectorAll('.session-card');
   const indicator = document.getElementById('sessionIndicator');
   const prevBtn = document.getElementById('prevSession');
   const nextBtn = document.getElementById('nextSession');
-  let currentIndex = 0;
+
+  // Start with the latest session (last card in the list)
+  let currentIndex = cards.length - 1;
 
   function updateSession(index) {
     cards.forEach((card, i) => {
       card.classList.toggle('active', i === index);
     });
-    indicator.textContent = `0${index + 1} / 0${cards.length}`;
+    // Formats index numbers as 01, 02, etc.
+    const currentNum = String(index + 1).padStart(2, '0');
+    const totalNum = String(cards.length).padStart(2, '0');
+    indicator.textContent = `${currentNum} / ${totalNum}`;
   }
+
+  // Set initial state
+  updateSession(currentIndex);
 
   prevBtn.addEventListener('click', () => {
     currentIndex = (currentIndex === 0) ? cards.length - 1 : currentIndex - 1;
