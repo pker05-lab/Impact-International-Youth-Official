@@ -162,47 +162,53 @@
       </div>
       <div class="copyright">© 2026 Impact International Youth. All rights reserved.</div>
     </footer>
-   <script>
+
+<script>
   const cards = document.querySelectorAll('.session-card');
   const indicator = document.getElementById('sessionIndicator');
   const prevBtn = document.getElementById('prevSession');
   const nextBtn = document.getElementById('nextSession');
 
-  // Start with the latest session (last card in the list)
   let currentIndex = cards.length - 1;
 
   function updateSession(index) {
     cards.forEach((card, i) => {
       card.classList.toggle('active', i === index);
     });
-    // Formats index numbers as 01, 02, etc.
-    const currentNum = String(index + 1).padStart(2, '0');
-    const totalNum = String(cards.length).padStart(2, '0');
-    indicator.textContent = `${currentNum} / ${totalNum}`;
+
+    if (indicator) {
+      const currentNum = String(index + 1).padStart(2, '0');
+      const totalNum = String(cards.length).padStart(2, '0');
+      indicator.textContent = `${currentNum} / ${totalNum}`;
+    }
   }
 
-  // Set initial state
-  updateSession(currentIndex);
-
-  prevBtn.addEventListener('click', () => {
-    currentIndex = (currentIndex === 0) ? cards.length - 1 : currentIndex - 1;
+  if (cards.length > 0) {
     updateSession(currentIndex);
-  });
 
-  nextBtn.addEventListener('click', () => {
-    currentIndex = (currentIndex === cards.length - 1) ? 0 : currentIndex + 1;
-    updateSession(currentIndex);
-  });
+    prevBtn?.addEventListener('click', () => {
+      currentIndex = currentIndex === 0 ? cards.length - 1 : currentIndex - 1;
+      updateSession(currentIndex);
+    });
+
+    nextBtn?.addEventListener('click', () => {
+      currentIndex = currentIndex === cards.length - 1 ? 0 : currentIndex + 1;
+      updateSession(currentIndex);
+    });
+  }
+</script>
 
 <script
   type="module"
-  src="https://YOUR-ID.search.ai.cloudflare.com/assets/v0.0.25/search-snippet.es.js"
+  src="https://97fdec1d-3577-479c-9c9c-f9c3961e8c4e.search.ai.cloudflare.com/assets/v0.0.25/search-snippet.es.js"
 ></script>
 
 <chat-bubble-snippet
-  api-url="https://YOUR-ID.search.ai.cloudflare.com/"
+  api-url="https://97fdec1d-3577-479c-9c9c-f9c3961e8c4e.search.ai.cloudflare.com/"
+  placeholder="Ask anything about IIY..."
+  theme="light"
+  max-results="5"
 ></chat-bubble-snippet>
-	  
-</script>
+
   </body>
 </html>
