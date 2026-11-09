@@ -1,0 +1,518 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Join Impact International Youth. Explore opportunities to contribute to our team, develop your skills and create impact.">
+  <title>Work With Us | Impact International Youth</title>
+  <link rel="icon" href="assets/logo.png">
+  <link rel="stylesheet" href="css/style.css">
+
+  <style>
+    .wu-page {
+      --wu-green: #1f4d3a;
+      --wu-green-light: #3f6b4f;
+      --wu-beige: #f5efe3;
+      --wu-cream: #fffaf0;
+      --wu-text: #263b30;
+      --wu-muted: #68776b;
+      color: var(--wu-text);
+      overflow: hidden;
+    }
+
+    .wu-container {
+      width: min(1120px, calc(100% - 40px));
+      margin: auto;
+    }
+
+    .wu-hero {
+      background: var(--wu-green);
+      color: var(--wu-cream);
+      padding: 100px 20px 90px;
+      text-align: center;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .wu-hero::before,
+    .wu-hero::after {
+      content: "";
+      position: absolute;
+      border: 1px solid rgba(255,255,255,.12);
+      border-radius: 50%;
+      width: 380px;
+      height: 380px;
+      pointer-events: none;
+    }
+
+    .wu-hero::before {
+      top: -240px;
+      left: -100px;
+    }
+
+    .wu-hero::after {
+      bottom: -270px;
+      right: -100px;
+      width: 480px;
+      height: 480px;
+    }
+
+    .wu-eyebrow {
+      display: inline-block;
+      color: #d8e5d6;
+      font-size: 12px;
+      font-weight: 700;
+      letter-spacing: 2.5px;
+      text-transform: uppercase;
+      margin-bottom: 22px;
+    }
+
+    .wu-hero h1 {
+      color: var(--wu-cream);
+      font-size: clamp(38px, 6vw, 68px);
+      line-height: 1.08;
+      letter-spacing: -2px;
+      max-width: 850px;
+      margin: 0 auto 22px;
+    }
+
+    .wu-hero p {
+      color: #e0e9df;
+      font-size: 17px;
+      line-height: 1.8;
+      max-width: 680px;
+      margin: 0 auto 32px;
+    }
+
+    .wu-button {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      padding: 14px 25px;
+      border-radius: 7px;
+      background: var(--wu-beige);
+      color: var(--wu-green);
+      text-decoration: none;
+      font-weight: 700;
+      font-size: 14px;
+      transition: .2s ease;
+    }
+
+    .wu-button:hover {
+      background: white;
+      transform: translateY(-2px);
+    }
+
+    .wu-button-outline {
+      background: transparent;
+      border: 1px solid rgba(255,255,255,.5);
+      color: white;
+    }
+
+    .wu-button-outline:hover {
+      color: var(--wu-green);
+    }
+
+    .wu-intro {
+      background: var(--wu-beige);
+      padding: 85px 20px;
+    }
+
+    .wu-section-heading {
+      max-width: 680px;
+      margin-bottom: 42px;
+    }
+
+    .wu-section-heading span {
+      color: var(--wu-green-light);
+      font-size: 12px;
+      font-weight: 800;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+    }
+
+    .wu-section-heading h2 {
+      color: var(--wu-green);
+      font-size: clamp(30px, 4vw, 43px);
+      line-height: 1.2;
+      letter-spacing: -1px;
+      margin: 12px 0;
+    }
+
+    .wu-section-heading p {
+      color: var(--wu-muted);
+      line-height: 1.8;
+      font-size: 15px;
+    }
+
+    .wu-opportunities {
+      background: var(--wu-cream);
+      padding: 85px 20px;
+    }
+
+    .wu-opportunity-grid {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 20px;
+    }
+
+    .wu-card {
+      background: white;
+      border: 1px solid #e9e5db;
+      border-radius: 12px;
+      padding: 30px;
+      transition: transform .2s ease, box-shadow .2s ease;
+    }
+
+    .wu-card:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 12px 30px rgba(31,77,58,.08);
+    }
+
+    .wu-card-number {
+      color: #9aa995;
+      font-size: 12px;
+      font-weight: 800;
+      letter-spacing: 2px;
+    }
+
+    .wu-card-icon {
+      width: 46px;
+      height: 46px;
+      display: grid;
+      place-items: center;
+      background: var(--wu-beige);
+      color: var(--wu-green);
+      border-radius: 10px;
+      font-size: 21px;
+      margin: 22px 0 18px;
+    }
+
+    .wu-card h3 {
+      color: var(--wu-green);
+      font-size: 21px;
+      margin: 0 0 12px;
+    }
+
+    .wu-card p {
+      color: var(--wu-muted);
+      font-size: 14px;
+      line-height: 1.8;
+      margin: 0;
+    }
+
+    .wu-benefits {
+      background: var(--wu-beige);
+      padding: 85px 20px;
+    }
+
+    .wu-benefit-grid {
+      display: grid;
+      grid-template-columns: repeat(4, minmax(0, 1fr));
+      gap: 16px;
+    }
+
+    .wu-benefit {
+      padding: 22px 18px;
+      border-left: 2px solid var(--wu-green-light);
+    }
+
+    .wu-benefit h3 {
+      color: var(--wu-green);
+      font-size: 17px;
+      margin: 0 0 10px;
+    }
+
+    .wu-benefit p {
+      color: var(--wu-muted);
+      font-size: 13px;
+      line-height: 1.7;
+      margin: 0;
+    }
+
+    .wu-expectations {
+      background: var(--wu-cream);
+      padding: 85px 20px;
+    }
+
+    .wu-expectations-box {
+      background: var(--wu-green);
+      color: white;
+      border-radius: 14px;
+      padding: 35px;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 30px;
+    }
+
+    .wu-expectations-box h2 {
+      color: var(--wu-cream);
+      font-size: 28px;
+      margin: 0 0 12px;
+    }
+
+    .wu-expectations-box p {
+      color: #dce7dc;
+      font-size: 14px;
+      line-height: 1.8;
+      margin: 0;
+    }
+
+    .wu-expectations-box ul {
+      margin: 0;
+      padding-left: 20px;
+      color: #e5ede3;
+      font-size: 14px;
+      line-height: 2.1;
+    }
+
+    .wu-cta {
+      background: var(--wu-beige);
+      text-align: center;
+      padding: 90px 20px;
+    }
+
+    .wu-cta h2 {
+      color: var(--wu-green);
+      font-size: clamp(32px, 5vw, 48px);
+      letter-spacing: -1px;
+      margin: 0 0 15px;
+    }
+
+    .wu-cta p {
+      color: var(--wu-muted);
+      line-height: 1.8;
+      max-width: 570px;
+      margin: 0 auto 28px;
+    }
+
+    .wu-cta .wu-button {
+      background: var(--wu-green);
+      color: white;
+    }
+
+    .wu-cta .wu-button:hover {
+      background: var(--wu-green-light);
+    }
+
+    .wu-page a:focus-visible {
+      outline: 3px solid #b7cbb3;
+      outline-offset: 4px;
+    }
+
+    @media (max-width: 800px) {
+      .wu-benefit-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+      }
+    }
+
+    @media (max-width: 600px) {
+      .wu-hero {
+        padding: 75px 20px;
+      }
+
+      .wu-hero h1 {
+        letter-spacing: -1px;
+      }
+
+      .wu-opportunity-grid,
+      .wu-expectations-box {
+        grid-template-columns: 1fr;
+      }
+
+      .wu-card {
+        padding: 25px;
+      }
+
+      .wu-intro,
+      .wu-opportunities,
+      .wu-benefits,
+      .wu-expectations {
+        padding: 65px 20px;
+      }
+
+      .wu-benefit-grid {
+        grid-template-columns: 1fr 1fr;
+        gap: 22px 10px;
+      }
+
+      .wu-expectations-box {
+        padding: 27px;
+      }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      .wu-card,
+      .wu-button {
+        transition: none;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <div class="wu-page">
+
+    <section class="wu-hero">
+      <div class="wu-container">
+        <span class="wu-eyebrow">Impact International Youth · Recruitment</span>
+        <h1>Be part of something that creates impact.</h1>
+        <p>
+          We're growing, and we're looking for passionate, creative and
+          dedicated young individuals to join our international team.
+          Bring your ideas, develop your skills and help us make a difference.
+        </p>
+        <a href="join.html" class="wu-button">Explore opportunities &nbsp; →</a>
+      </div>
+    </section>
+
+    <section class="wu-intro">
+      <div class="wu-container">
+        <div class="wu-section-heading">
+          <span>Work with us</span>
+          <h2>Your contribution can make a difference.</h2>
+          <p>
+            Impact International Youth brings young people together through
+            education, dialogue, diplomacy and community initiatives.
+            Our team makes these opportunities possible.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <section class="wu-opportunities" id="opportunities">
+      <div class="wu-container">
+        <div class="wu-section-heading">
+          <span>Explore the team</span>
+          <h2>Where would you like to contribute?</h2>
+          <p>
+            We have opportunities across several areas of the organisation.
+            Find an area that matches your interests and strengths.
+          </p>
+        </div>
+
+        <div class="wu-opportunity-grid">
+
+          <article class="wu-card">
+            <span class="wu-card-number">01 / COMMUNICATION</span>
+            <div class="wu-card-icon">✦</div>
+            <h3>Media & Communications</h3>
+            <p>
+              Help communicate IIY's work, create engaging content,
+              support social media activities and share our initiatives
+              with a wider audience.
+            </p>
+          </article>
+
+          <article class="wu-card">
+            <span class="wu-card-number">02 / PARTNERSHIPS</span>
+            <div class="wu-card-icon">↗</div>
+            <h3>Partnerships & External Relations</h3>
+            <p>
+              Support outreach, build relationships with organisations
+              and explore opportunities for collaboration and partnerships.
+            </p>
+          </article>
+
+          <article class="wu-card">
+            <span class="wu-card-number">03 / COMMUNITY</span>
+            <div class="wu-card-icon">◎</div>
+            <h3>Youth Engagement</h3>
+            <p>
+              Help connect young people, encourage participation,
+              support community activities and make our initiatives
+              more accessible.
+            </p>
+          </article>
+
+          <article class="wu-card">
+            <span class="wu-card-number">04 / DEVELOPMENT</span>
+            <div class="wu-card-icon">⌘</div>
+            <h3>Research & Development</h3>
+            <p>
+              Contribute ideas, explore new topics, support research
+              and help develop future projects and initiatives.
+            </p>
+          </article>
+
+        </div>
+      </div>
+    </section>
+
+    <section class="wu-benefits">
+      <div class="wu-container">
+        <div class="wu-section-heading">
+          <span>What you gain</span>
+          <h2>Grow while making an impact.</h2>
+          <p>
+            Being part of IIY is an opportunity to learn through real
+            responsibilities, teamwork and international collaboration.
+          </p>
+        </div>
+
+        <div class="wu-benefit-grid">
+          <div class="wu-benefit">
+            <h3>Recognition</h3>
+            <p>Official certificates recognising your contributions and service.</p>
+          </div>
+
+          <div class="wu-benefit">
+            <h3>Experience</h3>
+            <p>Practical experience in teamwork, leadership and organisation.</p>
+          </div>
+
+          <div class="wu-benefit">
+            <h3>Connections</h3>
+            <p>Opportunities to collaborate with young people internationally.</p>
+          </div>
+
+          <div class="wu-benefit">
+            <h3>Development</h3>
+            <p>Build confidence, communication skills and new perspectives.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="wu-expectations">
+      <div class="wu-container">
+        <div class="wu-expectations-box">
+          <div>
+            <h2>A commitment to making a difference.</h2>
+            <p>
+              IIY is a youth-led organisation built through the time,
+              effort and ideas of its members. We value people who are
+              responsible, collaborative and willing to contribute.
+            </p>
+          </div>
+
+          <ul>
+            <li>All team positions are voluntary and unpaid.</li>
+            <li>Members are expected to contribute their time and skills.</li>
+            <li>Professional conduct and teamwork are important.</li>
+            <li>Members must respect organisational confidentiality.</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <section class="wu-cta">
+      <div class="wu-container">
+        <span class="wu-eyebrow" style="color:#3f6b4f">Your next step starts here</span>
+        <h2>Ready to join the team?</h2>
+        <p>
+          If you're ready to contribute, learn and grow with us,
+          we'd love to hear from you.
+        </p>
+        <a href="join.html" class="wu-button">Apply to join IIY &nbsp; →</a>
+      </div>
+    </section>
+
+  </div>
+
+  <script src="js/script.js"></script>
+
+</body>
+</html>
